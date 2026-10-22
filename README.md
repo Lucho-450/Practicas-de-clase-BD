@@ -6,6 +6,6 @@ INTEGRANTES:
 
 2. Juan Fernando Incacutipa Choque
 
-3.Katheryne Flor Aimituma Ccallo
+3. Katheryne Flor Aimituma Ccallo
 
 4.Rocio Nicole Manzanedo Punto
