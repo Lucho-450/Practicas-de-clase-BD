@@ -1,8 +1,8 @@
-# Trabajo-de-clase-BD
+# Practicas-de-clase-BD
 
 INTEGRANTES:
 
-1.Luis Fernando Llosa Romero 
+1. Luis Fernando Llosa Romero 
 
 2.Juan Fernando Incacutipa Choque
 
