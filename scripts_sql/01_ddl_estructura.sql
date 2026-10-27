@@ -83,6 +83,7 @@ CREATE TABLE ubicacion_almacen (
     estado VARCHAR(20) NOT NULL
 );
 
+--10. Tabla TIPO_MOVIMIENTO
 CREATE TABLE tipo_movimiento (
     id_tipo_movimiento SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -90,6 +91,7 @@ CREATE TABLE tipo_movimiento (
     naturaleza VARCHAR(20) NOT NULL
 );
 
+--11. Tabla MOVIMIENTO_INVENTARIO
 CREATE TABLE movimiento_inventario (
     id_movimiento SERIAL PRIMARY KEY,
     id_tipo_movimiento INT NOT NULL REFERENCES tipo_movimiento(id_tipo_movimiento),
@@ -102,6 +104,7 @@ CREATE TABLE movimiento_inventario (
     observaciones TEXT
 );
 
+--12. Tabla CONTEO_INVENTARIO
 CREATE TABLE conteo_inventario (
     id_conteo SERIAL PRIMARY KEY,
     fecha_inicio TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -110,6 +113,7 @@ CREATE TABLE conteo_inventario (
     observaciones TEXT
 );
 
+--13. Tabla DETALLE_CONSUMO
 CREATE TABLE detalle_conteo (
     id_detalle_conteo SERIAL PRIMARY KEY,
     id_conteo INT NOT NULL REFERENCES conteo_inventario(id_conteo),
@@ -120,6 +124,7 @@ CREATE TABLE detalle_conteo (
     cantidad_contada NUMERIC(14,4) NOT NULL DEFAULT 0
 );
 
+--14. Tabla AJUSTE_INVENTARIO
 CREATE TABLE ajuste_inventario (
     id_ajuste SERIAL PRIMARY KEY,
     id_detalle_conteo INT NOT NULL REFERENCES detalle_conteo(id_detalle_conteo),
