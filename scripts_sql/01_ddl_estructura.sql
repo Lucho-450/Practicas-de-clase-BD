@@ -43,3 +43,42 @@ CREATE TABLE proveedor (
     correo VARCHAR(100) NULL,
     estado VARCHAR(20) NOT NULL
 );
+-- 6. Tabla PRODUCTO_PROVEEDOR
+CREATE TABLE producto_proveedor (
+    id_producto_proveedor SERIAL PRIMARY KEY,
+    codigo_proveedor VARCHAR(50) NOT NULL,
+    costo_referencia NUMERIC(10,2) NOT NULL,
+    plazo_entrega INTEGER NOT NULL,
+    id_proveedor INTEGER NOT NULL,
+    id_producto INTEGER NOT NULL,
+    UNIQUE (id_proveedor, id_producto),
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
+-- 7. Tabla ORDEN_COMPRA
+CREATE TABLE orden_compra (
+    id_orden SERIAL PRIMARY KEY,
+    fecha_emision DATE NOT NULL,
+    fecha_entrega_prevista DATE NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    id_proveedor INTEGER NOT NULL,
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor)
+);
+-- 8. Tabla DETALLE_ORDEN_COMPRA
+CREATE TABLE detalle_orden_compra (
+    id_detalle_orden SERIAL PRIMARY KEY,
+    cantidad_solicitada INTEGER NOT NULL,
+    costo_unitario NUMERIC(10,2) NOT NULL,
+    id_orden INTEGER NOT NULL,
+    id_producto INTEGER NOT NULL,
+    FOREIGN KEY (id_orden) REFERENCES orden_compra(id_orden),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
+-- 9. Tabla UBICACION_ALMACEN
+CREATE TABLE ubicacion_almacen (
+    id_ubicacion SERIAL PRIMARY KEY,
+    codigo VARCHAR(20) UNIQUE NOT NULL,
+    tipo_ubicacion VARCHAR(50) NOT NULL,
+    descripcion VARCHAR(255) NULL,
+    estado VARCHAR(20) NOT NULL
+);
