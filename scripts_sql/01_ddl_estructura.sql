@@ -24,3 +24,12 @@ CREATE TABLE producto (
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
     FOREIGN KEY (id_unidad) REFERENCES unidad_medida(id_unidad)
 );
+-- 4. Tabla REGLA_REPOSICION
+CREATE TABLE regla_reposicion (
+    id_regla SERIAL PRIMARY KEY,
+    stock_minimo INTEGER NOT NULL,
+    stock_maximo INTEGER NOT NULL,
+    punto_reposicion INTEGER NOT NULL,
+    id_producto INTEGER UNIQUE NOT NULL,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
