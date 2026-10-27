@@ -11,3 +11,16 @@ CREATE TABLE unidad_medida (
     nombre VARCHAR(50) NOT NULL,
     abreviatura VARCHAR(10) NOT NULL
 );
+-- 3. Tabla PRODUCTO
+CREATE TABLE producto (
+    id_producto SERIAL PRIMARY KEY,
+    codigo_barras VARCHAR(50) UNIQUE NOT NULL,
+    nombre VARCHAR(150) NOT NULL,
+    descripcion VARCHAR(255) NULL,
+    precio_referencia NUMERIC(10,2) NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    id_categoria INTEGER NOT NULL,
+    id_unidad INTEGER NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
+    FOREIGN KEY (id_unidad) REFERENCES unidad_medida(id_unidad)
+);
