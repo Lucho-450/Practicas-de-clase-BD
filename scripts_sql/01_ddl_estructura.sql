@@ -82,3 +82,49 @@ CREATE TABLE ubicacion_almacen (
     descripcion VARCHAR(255) NULL,
     estado VARCHAR(20) NOT NULL
 );
+
+CREATE TABLE tipo_movimiento (
+    id_tipo_movimiento SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(255),
+    naturaleza VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE movimiento_inventario (
+    id_movimiento SERIAL PRIMARY KEY,
+    id_tipo_movimiento INT NOT NULL REFERENCES tipo_movimiento(id_tipo_movimiento),
+    id_producto INT NOT NULL,
+    id_lote INT,
+    id_ubicacion INT,
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    cantidad NUMERIC(14,4) NOT NULL,
+    referencia_operacion VARCHAR(100),
+    observaciones TEXT
+);
+
+CREATE TABLE conteo_inventario (
+    id_conteo SERIAL PRIMARY KEY,
+    fecha_inicio TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    fecha_fin TIMESTAMP,
+    estado VARCHAR(20) NOT NULL,
+    observaciones TEXT
+);
+
+CREATE TABLE detalle_conteo (
+    id_detalle_conteo SERIAL PRIMARY KEY,
+    id_conteo INT NOT NULL REFERENCES conteo_inventario(id_conteo),
+    id_producto INT NOT NULL,
+    id_lote INT,
+    id_ubicacion INT,
+    cantidad_sistema NUMERIC(14,4) NOT NULL DEFAULT 0,
+    cantidad_contada NUMERIC(14,4) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE ajuste_inventario (
+    id_ajuste SERIAL PRIMARY KEY,
+    id_detalle_conteo INT NOT NULL REFERENCES detalle_conteo(id_detalle_conteo),
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    cantidad_ajustada NUMERIC(14,4) NOT NULL,
+    motivo VARCHAR(255) NOT NULL,
+    estado VARCHAR(20) NOT NULL
+);
