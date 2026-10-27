@@ -2,7 +2,7 @@
 
 INTEGRANTES:
 
-1. Luis Fernando Llosa Romero
+1. Luis Fernando Llosa Romero - Lucho-450
 
 2. Juan Fernando Incacutipa Choque - Lotkrt
 
