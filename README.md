@@ -8,4 +8,4 @@ INTEGRANTES:
 
 3. Katheryne Flor Aimituma Ccallo - Kathe-fac
 
-4.Rocio Nicole Manzanedo Punto
+4. Rocio Nicole Manzanedo Punto - Choco-c4t
