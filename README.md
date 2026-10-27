@@ -4,7 +4,7 @@ INTEGRANTES:
 
 1. Luis Fernando Llosa Romero
 
-2. Juan Fernando Incacutipa Choque
+2. Juan Fernando Incacutipa Choque - Lotkrt
 
 3. Katheryne Flor Aimituma Ccallo
 
