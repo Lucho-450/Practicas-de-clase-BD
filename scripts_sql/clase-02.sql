@@ -6,13 +6,14 @@ values ('Lacteos','derivados de la leche','Activo'),
        ('Pescadería','mariscos y pescado','Activo'),
        ('Frutería','frutas','Activo');
 
+
 -- 2. Tabla UNIDAD_MEDIDA
 insert into unidad_medida (nombre, abreviatura)
 values ('Litros','lt'),
        ('gramos','gr'),
        ('kilogramos','kg'),
-       ('Miligramos', 'mg'),
-       ('Unidad', 'uni');
+       ('miligramos', 'mg'),
+       ('unidad', 'uni');
 
 -- 3. Tabla PRODUCTO
 
@@ -22,6 +23,8 @@ values ('7751271010016','Leche laive','leche con lactosa',12.00,'Activo',1,1),
        ('0012345678905','Ciabatta','Pan',4.00,'Inactivo',3,3),
        ('5901234123457','Bonito','pescado',18.00,'Activo',4,4),
        ('4006381333931','Naranja de jugo','Fruta',7.00,'Activo',5,5);
+-- UPDATE: Cambiar el precio de producto
+UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
 
 -- 4. Tabla REGLA_REPOSICION
 
