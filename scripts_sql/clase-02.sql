@@ -23,8 +23,6 @@ values ('7751271010016','Leche laive','leche con lactosa',12.00,'Activo',1,1),
        ('0012345678905','Ciabatta','Pan',4.00,'Inactivo',3,3),
        ('5901234123457','Bonito','pescado',18.00,'Activo',4,4),
        ('4006381333931','Naranja de jugo','Fruta',7.00,'Activo',5,5);
--- UPDATE: Cambiar el precio de producto
-UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
 
 -- 4. Tabla REGLA_REPOSICION
 
@@ -71,7 +69,9 @@ VALUES
 (50, 14.00, 4, 4),
 (50, 5.20,  5, 5);
 
-
+-- UPDATE: Cambiar el precio de producto
+UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
 
 -- UPDATE: Cambiar el estado de una orden de compra
 UPDATE orden_compra SET estado = 'Recibida' WHERE id_orden = 2;
+
