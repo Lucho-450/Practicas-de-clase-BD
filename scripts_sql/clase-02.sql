@@ -67,3 +67,8 @@ VALUES
 (50, 2.80,  3, 3),
 (50, 14.00, 4, 4),
 (50, 5.20,  5, 5);
+
+
+
+-- UPDATE: Cambiar el estado de una orden de compra
+UPDATE orden_compra SET estado = 'Recibida' WHERE id_orden = 2;
