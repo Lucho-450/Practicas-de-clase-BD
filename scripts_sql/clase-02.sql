@@ -10,18 +10,18 @@ values ('Lacteos','derivados de la leche','Activo'),
 insert into unidad_medida (nombre, abreviatura)
 values ('Litros','lt'),
        ('gramos','gr'),
-       ('gramos','gr'),
        ('kilogramos','kg'),
-       ('kilogramos','kg');
+       ('Miligramos', 'mg'),
+       ('Unidad', 'uni');
 
 -- 3. Tabla PRODUCTO
 
 insert into producto (codigo_barras, nombre, descripcion, precio_referencia,estado, id_categoria, id_unidad)
-values ('7751271010016','Leche laive','leche con lactosa','12.00','Activo',1,1),
-       ('7750243000123','Chorizo Otto kunz','chorizo precocido','16.00','Inactivo',2,2),
-       ('0012345678905','Ciabatta','Pan','4.00','Inactivo',3,3),
-       ('5901234123457','Bonito','pescado','18.00','Activo',4,4),
-       ('4006381333931','Naranja de jugo','Fruta','7.00','Activo',5,5);
+values ('7751271010016','Leche laive','leche con lactosa',12.00,'Activo',1,1),
+       ('7750243000123','Chorizo Otto kunz','chorizo precocido',16.00,'Inactivo',2,2),
+       ('0012345678905','Ciabatta','Pan',4.00,'Inactivo',3,3),
+       ('5901234123457','Bonito','pescado',18.00,'Activo',4,4),
+       ('4006381333931','Naranja de jugo','Fruta',7.00,'Activo',5,5);
 
 -- 4. Tabla REGLA_REPOSICION
 
