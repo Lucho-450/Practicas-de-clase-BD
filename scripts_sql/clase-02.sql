@@ -108,5 +108,6 @@ where id_producto = 5;
 
 -- UPDATE: cambiar el tipo de ubicacion
 UPDATE ubicacion_almacen
-SET tipo_ubicacion = 'Cuarentena'
-WHERE codigo = 'DEV-01';
+SET tipo_ubicacion = 'Cuarentena',
+    descripcion   = 'Zona de cuarentena'
+WHERE codigo = 'PISO-01';
