@@ -69,6 +69,30 @@ VALUES
 (50, 14.00, 4, 4),
 (50, 5.20,  5, 5);
 
+-- 9. Tabla UBICACION_ALMACEN
+INSERT INTO ubicacion_almacen (codigo, tipo_ubicacion, descripcion, estado) VALUES
+('A-01-01', 'Estante',      'Estante A, nivel 1, posición 1', 'ACTIVO'),
+('B-02-01', 'Estante',      'Estante B, nivel 2, posición 1', 'ACTIVO'),
+('REF-01',  'Refrigerado',  'Cámara de refrigeración 1',      'ACTIVO'),
+('PISO-01', 'Piso',         'Zona de piso principal',         'ACTIVO'),
+('CUAR-01', 'Cuarentena',   'Zona de cuarentena',             'ACTIVO');
+
+-- 10. Tabla LOTE
+INSERT INTO lote (numero_lote, fecha_fabricacion, fecha_vencimiento) VALUES
+('LOT-2024-001', '2024-01-10', '2025-01-10'),
+('LOT-2024-002', '2024-02-15', '2025-02-15'),
+('LOT-2024-003', '2024-03-20', '2025-03-20'),
+('LOT-2024-007', '2024-07-01', '2025-07-01'),
+('LOT-2024-008', '2024-08-18', '2026-08-18');
+
+-- 11.  Tabla EXISTENCIA
+INSERT INTO existencia (id_lote, id_ubicacion, cantidad_disponible, cantidad_reservada) VALUES
+(1, 1, 150, 20),
+(1, 2, 100,  0),
+(2, 1, 200, 50),
+(2, 3,  75, 10),
+(8, 8, 250,  0);
+
 -- UPDATE: Cambiar el precio de producto
 UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
 
