@@ -91,7 +91,8 @@ INSERT INTO existencia (id_lote, id_ubicacion, cantidad_disponible, cantidad_res
 (1, 2, 100,  0),
 (2, 1, 200, 50),
 (2, 3,  75, 10),
-(8, 8, 250,  0);
+(5, 4, 250,  0);
+
 
 -- UPDATE: Cambiar el precio de producto
 UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
