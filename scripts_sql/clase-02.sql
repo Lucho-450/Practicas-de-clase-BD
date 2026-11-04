@@ -75,3 +75,8 @@ UPDATE producto SET precio_referencia = 15.00 WHERE id_unidad = 1;
 -- UPDATE: Cambiar el estado de una orden de compra
 UPDATE orden_compra SET estado = 'Recibida' WHERE id_orden = 2;
 
+-- UPDATE: ampliar el stock máximo y el punto de reposición del producto 5
+update regla_reposicion
+set stock_maximo = 200,
+    punto_reposicion = 80
+where id_producto = 5;
