@@ -49,3 +49,12 @@ values ('LAI-001', 9.50, 2, 1, 1),
        ('PDS-007', 2.80, 1, 3, 3),
        ('PMA-032', 14.00, 2, 4, 4),
        ('AFV-101', 5.20, 1, 5, 5);
+
+-- 7. Tabla ORDEN_COMPRA
+INSERT INTO orden_compra (fecha_emision, fecha_entrega_prevista, estado, id_proveedor)
+VALUES 
+('2026-11-01', '2026-11-05', 'Aprobada', 1),
+('2026-11-02', '2026-11-06', 'Pendiente', 2),
+('2026-11-02', '2026-11-04', 'Pendiente', 3),
+('2026-11-03', '2026-11-07', 'Recibida', 4),
+('2026-11-03', '2026-11-05', 'Cancelada', 5);
