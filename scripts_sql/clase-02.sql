@@ -104,3 +104,8 @@ update regla_reposicion
 set stock_maximo = 200,
     punto_reposicion = 80
 where id_producto = 5;
+
+-- UPDATE: cambiar el tipo de ubicacion
+UPDATE ubicacion_almacen
+SET tipo_ubicacion = 'Cuarentena'
+WHERE codigo = 'DEV-01';
